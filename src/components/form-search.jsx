@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
-  // constructor(props) {
-  //   super(props);
+  handleUpdate = (event) => {
+    this.props.searchFunction(event.target.value);
+  };
 
-  //   this.state = { title: "" };
-  // }
   render() {
     return (
-      <input type="text" className="form-control form-search" />
+      <input
+        type="text"
+        className="form-control form-search"
+        onChange={this.handleUpdate}
+      />
     );
   }
 }
